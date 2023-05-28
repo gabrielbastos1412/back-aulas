@@ -18,8 +18,7 @@ var livroB = {
 };
 var livroC = {
     nome: "Blablabla",
-    preco: 32,
-    categoria: categorias.Auto_ajuda
+    preco: 32
 };
 livraria.push(livroA);
 livraria.push(livroB);

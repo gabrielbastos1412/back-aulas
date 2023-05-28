@@ -24,7 +24,6 @@ const livroB: Livro={
 const livroC: Livro={
     nome:"Blablabla",
     preco:32,
-    categoria:categorias.Auto_ajuda
 }
 livraria.push(livroA)
 livraria.push(livroB)
