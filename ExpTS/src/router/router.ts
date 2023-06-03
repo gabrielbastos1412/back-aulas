@@ -1,41 +1,16 @@
 import { Router } from 'express';
+import mainController from '../controllers/main';
 
 const router = Router();
-const publicPath = `${process.cwd()}/public`;
+// Main Controller
 
-router.get('/lorem', (req, res) => {
-  res.sendFile(`${publicPath}/html/index.html`);
-});
-
-router.get('/', (req, res) => {
-  res.send('Hello world!');
-});
-
-router.get('/sobre', (req, res) => {
-  res.send('Página sobre');
-});
-
-router.get('/hb1', (req, res) => {
-    res.render('hb1', {
-    mensagem: 'Olá, você está aprendendo Express + HBS!',
-    layout: false,
-    });
-});
-router.get('/hb2', (req, res) => {
-    res.render('hb2', {
-    poweredByNodejs: true,
-    name: 'Express',
-    type: 'Framework',
-    layout: false,
-    });
-});
-router.get('/hb3', (req, res) => {
-    const profes = [
-    { nome: 'David Fernandes', sala: 1238 },
-    { nome: 'Horácio Fernandes', sala: 1233 },
-    { nome: 'Edleno Moura', sala: 1236 },
-    { nome: 'Elaine Harada', sala: 1231 }
-    ];
-    res.render('hb3', { profes, layout: false });
-   });
+router.get('/', mainController.index);
+router.get('/lorem', mainController.lorem);
+router.get('/bemvindo/:nome', mainController.sobre);
+router.get('/hb1', mainController.hb1);
+router.get('/hb2', mainController.hb2);
+router.get('/hb3', mainController.hb3);
+router.get('/hb4', mainController.hb4);
+router.get('/hb5', mainController.hb5);
+// User Controller
 export default router;

@@ -14,9 +14,12 @@ const app = express();
 const PORT = process.env.PORT || 3333;
 const publicPath = `${process.cwd()}/public`;
 
-app.engine("handlebars", engine());
+app.engine("handlebars", engine({
+    helpers: require(`${process.cwd()}/src/views/helpers/helpers.ts`)
+   }));
 app.set("view engine", "handlebars");
 app.set("views", `${process.cwd()}/src/views`);
+
 app.use('/css', express.static(`${publicPath}/css`));
 app.use('/js', express.static(`${publicPath}/js`));
 //app.use(morgan('short'));
