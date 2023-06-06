@@ -7,16 +7,14 @@ const index = (req: Request, res: Response) => {
 };
 const hb1 = (req:Request, res:Response) => {
     res.render('hb1', {
-        mensagem: 'Olá, você está aprendendo Express + HBS!',
-        layout: false,
+        mensagem: 'Universidade federal do amazonas',
     });
 };
 const hb2 = (req: Request, res: Response) => {
- res.render('main/hb2', {
- nome: 'React',
- tipo: 'library',
- poweredByNode: true,
- layout: false,
+ res.render('hb2', {
+    name: 'React',
+    type: 'library',
+    poweredByNodejs: true,
  });
 };
 
@@ -27,7 +25,7 @@ const hb3 = (req: Request, res: Response) => {
         { nome: 'Edleno Moura', sala: 1236 },
         { nome: 'Elaine Harada', sala: 1231 }
         ];
-        res.render('hb3', { profes, layout: false });
+        res.render('hb3', { profes, layout: "hb3" });
 }
 
 const hb4 = (req:Request,res:Response) => {
@@ -37,7 +35,7 @@ const hb4 = (req:Request,res:Response) => {
         { nome: 'Edleno Moura', sala: 1236 },
         { nome: 'Elaine Harada', sala: 1231 },
         ];
-        res.render('hb4', { profes, layout: false });
+        res.render('hb4', { profes });
 }
 
 const hb5 = (req:Request,res:Response) => {
@@ -50,7 +48,7 @@ const hb5 = (req:Request,res:Response) => {
         { name: 'Docker', type: 'Virtualization', poweredByNodejs: false },
         { name: 'Sequelize', type: 'ORM tool', poweredByNodejs: true },
     ];
-    res.render('hb5', { technologies, layout: false });
+    res.render('hb5', { technologies });
 }
 
 const lorem = (req:Request,res:Response) =>{
